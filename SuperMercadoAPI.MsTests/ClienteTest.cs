@@ -59,5 +59,21 @@ namespace SuperMercadoAPI.MsTests
             // Assert
             Assert.IsTrue(actualizado, "El cliente debe actualizarse correctamente si el email es válido.");
         }
+        [TestMethod]
+        public void CLI_04_ActualizarCliente_SinEmail()
+        {
+            // Arrange
+            var cliente = new
+            {
+                Nombre = "Solo Nombre",
+                Email = ""
+            };
+
+            // Act
+            bool actualizado = !string.IsNullOrEmpty(cliente.Email) && cliente.Email.Contains("@");
+
+            // Assert
+            Assert.IsFalse(actualizado, "Debe fallar la actualización si el email no está presente.");
+        }
     }
 }
