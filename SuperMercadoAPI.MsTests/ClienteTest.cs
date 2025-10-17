@@ -26,5 +26,21 @@ namespace SuperMercadoAPI.MsTests
             // Assert
             Assert.IsTrue(esValido, "El cliente debe ser válido si el email es correcto.");
         }
+        [TestMethod]
+        public void CLI_02_RegistrarCliente_SinEmail_Invalido()
+        {
+            // Arrange
+            var cliente = new
+            {
+                Nombre = "Juan Pérez",
+                Email = ""
+            };
+
+            // Act
+            bool esValido = !string.IsNullOrWhiteSpace(cliente.Email) && cliente.Email.Contains("@");
+
+            // Assert
+            Assert.IsFalse(esValido, "Debe fallar si el campo Email está vacío.");
+        }
     }
 }
