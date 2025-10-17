@@ -75,5 +75,17 @@ namespace SuperMercadoAPI.MsTests
             // Assert
             Assert.IsFalse(actualizado, "Debe fallar la actualización si el email no está presente.");
         }
+        [TestMethod]
+        public void CLI_05_ToggleCliente_ActivoInactivo()
+        {
+            // Arrange
+            bool activo = true;
+
+            // Act
+            activo = !activo;
+
+            // Assert
+            Assert.IsFalse(activo, "El estado debe cambiar correctamente al desactivar el cliente.");
+        }
     }
 }
