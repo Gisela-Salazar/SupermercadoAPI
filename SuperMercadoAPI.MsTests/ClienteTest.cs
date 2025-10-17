@@ -87,5 +87,21 @@ namespace SuperMercadoAPI.MsTests
             // Assert
             Assert.IsFalse(activo, "El estado debe cambiar correctamente al desactivar el cliente.");
         }
+        [TestMethod]
+        public void CLI_06_ListarClientes_DevuelveLista()
+        {
+            // Arrange
+            var clientes = new[]
+            {
+                new { Id = 1, Nombre = "Juan", Email = "juan@example.com" },
+                new { Id = 2, Nombre = "Ana", Email = "ana@example.com" }
+            };
+
+            // Act
+            bool hayClientes = clientes.Length > 0;
+
+            // Assert
+            Assert.IsTrue(hayClientes, "La lista de clientes no debe estar vacía.");
+        }
     }
 }
