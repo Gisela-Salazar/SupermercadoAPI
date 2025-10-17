@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supermercado.Entidades", "Supermercado.Entidades\Supermercado.Entidades.csproj", "{F633B377-89DF-484F-8EBD-2CD4729F26AF}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supermercado.LogicaNegocio", "Supermercado.LogicaNegocio\Supermercado.LogicaNegocio.csproj", "{111FCAAB-8F43-4CA9-8DB4-E4FA06C07355}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supermercado.API", "Supermercado.API\Supermercado.API.csproj", "{CF46983F-65A2-4BB9-91D9-49BD221C6AF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperMercadoAPI.MsTests", "SuperMercadoAPI.MsTests\SuperMercadoAPI.MsTests.csproj", "{D8001E46-F353-4406-9FD6-5608662C199C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CF46983F-65A2-4BB9-91D9-49BD221C6AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF46983F-65A2-4BB9-91D9-49BD221C6AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF46983F-65A2-4BB9-91D9-49BD221C6AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8001E46-F353-4406-9FD6-5608662C199C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8001E46-F353-4406-9FD6-5608662C199C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8001E46-F353-4406-9FD6-5608662C199C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8001E46-F353-4406-9FD6-5608662C199C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
