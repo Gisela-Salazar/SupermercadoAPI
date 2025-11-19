@@ -1,0 +1,14 @@
+﻿SupermercadoAPI/
+   Program.cs
+   appsettings.json
+   SupermercadoAPI.csproj
+   Controllers/
+   Models/
+   railway.toml   ✔ (AQUÍ)
+
+
+   [build]
+command = "dotnet publish -c Release -o out"
+
+[start]
+command = "dotnet out/SupermercadoAPI.dll"
