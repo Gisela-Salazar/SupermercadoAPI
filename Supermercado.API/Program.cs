@@ -4,7 +4,6 @@ using Microsoft.OpenApi.Models;
 using Supermercado.DataAccess;
 using Supermercado.LogicaNegocio;
 using System.Text;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,7 +28,7 @@ builder.Services.AddAuthentication("Bearer")
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(
-    Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
         };
     });
 
@@ -41,7 +40,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Supermercado API", Version = "v1" });
 
-    // 🔑 Configuración para botón Authorize (JWT)
+    // Configuración para botón Authorize (JWT)
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -49,7 +48,7 @@ builder.Services.AddSwaggerGen(c =>
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "Introduce el token JWT con el prefijo 'Bearer'. Ejemplo: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6..."
+        Description = "Introduce el token JWT con el prefijo 'Bearer'. Ejemplo: Bearer eyJhbGc..."
     });
 
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -69,6 +68,12 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+// ⭐⭐⭐ PASO 1 PARA RENDER ⭐⭐⭐
+// Render asigna un puerto diferente, lo obtenemos aquí:
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Urls.Add($"http://0.0.0.0:{port}");
+// ⭐⭐⭐ FIN DEL PASO 1 ⭐⭐⭐
 
 app.UseSwagger();
 app.UseSwaggerUI();
